@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог о путешествиях</title>
+    <link rel="stylesheet" href="task5.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Прогулки по Верещагино</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Главная</a></li>
+                <li><a href="#travels" class="nav-link">Мои путешествия</a></li>
+                <li><a href="#photos" class="nav-link">Фото</a></li>
+                <li><a href="#recommendations" class="nav-link">Рекомендации</a></li>
+                <li><a href="#contacts" class="nav-link">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Главный раздел -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Привет, я Ирина</h1>
+            <p>Блогер-путешественник, открываю мир вместе с вами</p>
+            <button class="cta-button" onclick="scrollToSection('travels')">Узнать больше</button>
+        </div>
+        <div class="hero-image">
+            <img src="im1.jpg" alt="Анна">
+        </div>
+    </section>
+
+    <!-- Карта путешествий -->
+    <section id="travels" class="section">
+        <div class="container">
+            <h2>Карта моих путешествий</h2>
+            <div class="travel-map">
+                <img src="im15.png" alt="Карта путешествий">
+                <div class="map-points">
+                    <div class="point" style="top: 30%; left: 15%;">пруд Водокачка</div>
+                    <div class="point" style="top: 40%; left: 65%;">Парк</div>
+                    <div class="point" style="top: 35%; left: 75%;">Стадион</div>
+                    <div class="point" style="top: 50%; left: 50%;">Кинотеатр "Комсомолец"</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Фото -->
+    <section id="photos" class="section bg-light">
+        <div class="container">
+            <h2>Мои фото</h2>
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <img src="im12.jpg" alt="Горы">
+                </div>
+                <div class="photo-item">
+                    <img src="im14.jpg" alt="Природа">
+                </div>
+                <div class="photo-item">
+                    <img src="im3.jpg" alt="Пляж">
+                </div>
+                <div class="photo-item">
+                    <img src="im4.jpg" alt="Поход">
+                </div>
+                                <div class="photo-item">
+                    <img src="im5.jpg" alt="Поход">
+                </div>
+                                <div class="photo-item">
+                    <img src="im6.jpg" alt="Поход">
+                </div>
+                                <div class="photo-item">
+                    <img src="im7.jpg" alt="Поход">
+                </div>
+                                <div class="photo-item">
+                    <img src="im8.jpg" alt="Поход">
+                </div>
+                                <div class="photo-item">
+                    <img src="im9.jpg" alt="Поход">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Рекомендации -->
+    <section id="recommendations" class="section">
+        <div class="container">
+            <h2>Рекомендации для туристов</h2>
+            <div class="recommendations-grid">
+                <div class="recommendation-card">
+                    <h3>Гостиницы / отели</h3>
+                    <p>Проверенные места для комфортного отдыха в Верещагино </p>
+                </div>
+                <div class="recommendation-card">
+                    <h3>Маршруты</h3>
+                    <p>Интересные туристические маршруты для самостоятельных путешествий</p>
+                </div>
+                <div class="recommendation-card">
+                    <h3>Бюджетные советы</h3>
+                    <p>Как путешествовать экономно без потери качества</p>
+                </div>
+                <div class="recommendation-card">
+                    <h3>Локации</h3>
+                    <p>Самые фотогеничные места для ваших снимков</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contacts" class="section bg-light">
+        <div class="container">
+            <h2>Контакты</h2>
+            <div class="contacts-content">
+                <div class="contact-info">
+                    <h3>Свяжитесь со мной</h3>
+                    <p>📧 hello@travel.com</p>
+                    <p>📱 +7 (000) 000-00-00</p>
+                    <div class="social-links">
+                        <a href="#">ВКонтакте</a>
+                        <a href="#">RUTube</a>
+                        <a href="#">Telegram</a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Ваше имя" required>
+                    <input type="email" placeholder="Ваш email" required>
+                    <textarea placeholder="Ваше сообщение" rows="5" required></textarea>
+                    <button type="submit">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <p>&copy; 2025 Прогулки по Верещагино. Все права защищены.</p>
+    </footer>
+
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Плавная прокрутка для всех ссылок навигации
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
